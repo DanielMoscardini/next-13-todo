@@ -1,11 +1,17 @@
 interface ParamsTodoItem {
-  id: string
-  title: string
-  complete: Boolean
+  id: string;
+  title: string;
+  complete: Boolean;
 }
 
-export default function TodoItem({id, title, complete}: ParamsTodoItem) {
+export default function TodoItem({ id, title, complete }: ParamsTodoItem) {
   return (
-
-  )
+    <li className="flex gap-1 items-center">
+      <input id={id} type="checkbox" className="cursor-pointer peer" />
+      <label
+        htmlFor={id}
+        className="cursor-pointer peer-checked:line-through peer-checked:text-slate-500"
+      ></label>
+    </li>
+  );
 }
